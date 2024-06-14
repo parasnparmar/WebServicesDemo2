@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.webservicesdemo2.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="20dp"
+            android:src="@{user.avatar}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtFirstName"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="20dp"
+            android:text="@{user.first_name}"
+            app:layout_constraintLeft_toRightOf="@id/imgAvatar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtLastName"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="20dp"
+            android:text="@{user.last_name}"
+            app:layout_constraintLeft_toRightOf="@id/imgAvatar"
+            app:layout_constraintTop_toBottomOf="@id/txtFirstName" />
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="20dp"
+            android:text="@{user.email}"
+            app:layout_constraintLeft_toRightOf="@id/imgAvatar"
+            app:layout_constraintTop_toBottomOf="@id/txtLastName" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
